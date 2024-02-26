@@ -1,0 +1,127 @@
+{
+  "displayName": "Super Resolution Imaging",
+  "name": "super-resolution-imaging",
+  "version": "1.0.0",
+  "icon": "icon-dl-function",
+  "scope": "project",
+    "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/super-resolution.git",
+    "gitTag": "1.0.0"
+  },
+  "components": {
+    "pipelineNodes": [
+      {
+        "invoke": {
+          "type": "function",
+          "namespace": "super-resolution-imaging.super_res"
+        },
+        "categories": ["image-utils"],
+        "displayName": "Super Resolution",
+        "description": "Upscale and improve the quality of low resolution images",
+        "scope": "project",
+        "configuration": {
+          "fields": [
+            {
+              "name": "name",
+              "title": "Node Name",
+              "props": {
+                "title": true,
+                "type": "string",
+                "default": "Super Resolution",
+                "required": true,
+                "placeholder": "Insert node name"
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                }
+              ],
+              "widget": "dl-input"
+            },
+            {
+              "name": "weights",
+              "title": "Weights",
+              "props": {
+                "type": "string",
+                "required": true,
+                "options": [
+                  {
+                    "label": "GANS",
+                    "value": "gans"
+                  },
+                  {
+                    "label": "PSNR Small",
+                    "value": "psnr-small"
+                  },
+                  {
+                    "label": "PSNR Large",
+                    "value": "psnr-large"
+                  },
+                  {
+                    "label": "Noise Cancel",
+                    "value": "noise-cancel"
+                  }
+                ]
+              },
+              "rules": [
+                {
+                  "type": "required",
+                  "effect": "error"
+                }
+              ],
+              "widget": "dl-select"
+            }
+          ]
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "super-resolution-imaging",
+        "entryPoint": "modules/super_resolution.py",
+        "className": "ServiceRunner",
+        "initInputs": [],
+        "functions": [
+          {
+            "name": "super_res",
+            "description": "Upscale and improve the quality of low resolution images",
+            "input": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "output": [
+              {
+                "type": "Item",
+                "name": "item"
+              }
+            ],
+            "displayIcon": "function",
+            "displayName": "Super Resolution Imaging"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "super-resolution-imaging",
+        "moduleName": "super-resolution-imaging",
+        "runtime": {
+          "podType": "regular-xs",
+          "concurrency": 10,
+          "autoscaler": {
+            "minReplicas": 1,
+            "maxReplicas": 2,
+            "queueLength": 10
+          },
+          "executionTimeout": 3600,
+
+        },
+        "maxAttempts": 3
+      }
+    ]
+  }
+}
