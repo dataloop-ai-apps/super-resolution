@@ -113,14 +113,11 @@
           "podType": "regular-xs",
           "concurrency": 10,
           "autoscaler": {
-            "minReplicas": 1,
+            "minReplicas": 0,
             "maxReplicas": 2,
             "queueLength": 10
           },
-          "executionTimeout": 3600,
-
         },
-        "maxAttempts": 3
       }
     ]
   }
