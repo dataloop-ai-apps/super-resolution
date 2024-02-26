@@ -12,6 +12,7 @@
   "components": {
     "pipelineNodes": [
       {
+        "name": "super-resolution",
         "invoke": {
           "type": "function",
           "namespace": "super-resolution-imaging.super_res"
