@@ -1,13 +1,13 @@
 {
   "displayName": "Super Resolution Imaging",
   "name": "super-resolution-imaging",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "icon-dl-function",
   "scope": "project",
     "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/super-resolution.git",
-    "gitTag": "1.0.0"
+    "gitTag": "1.0.1"
   },
   "components": {
     "pipelineNodes": [
