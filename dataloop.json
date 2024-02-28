@@ -20,7 +20,7 @@
         "categories": ["image-utils"],
         "displayName": "Super Resolution",
         "description": "Upscale and improve the quality of low resolution images",
-        "scope": "project",
+        "scope": "node",
         "configuration": {
           "fields": [
             {
