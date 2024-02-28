@@ -3,7 +3,7 @@
   "name": "super-resolution-imaging",
   "version": "1.1.0",
   "icon": "icon-dl-function",
-  "scope": "project",
+  "scope": "public",
     "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/super-resolution.git",
