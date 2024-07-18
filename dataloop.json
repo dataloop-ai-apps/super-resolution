@@ -7,7 +7,10 @@
     "Provider": "Other",
     "Category": "Pipeline",
     "Pipeline Type": "Node",
-    "Node Type": "Image Utils"
+    "Node Type": "Image Utils",
+    "Media Type": [
+      "Image"
+    ]
   },
   "scope": "public",
   "codebase": {
