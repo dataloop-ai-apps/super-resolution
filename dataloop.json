@@ -108,7 +108,7 @@
                 "name": "item"
               }
             ],
-            "displayIcon": "function",
+            "displayIcon": "icon-dl-high-quality",
             "displayName": "Super Resolution Imaging"
           }
         ]
