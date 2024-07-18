@@ -5,8 +5,10 @@
   "icon": "icon-dl-function",
   "attributes": {
     "Provider": "Other",
-    "Category": "Pipeline",
-    "Pipeline Type": "Node",
+    "Category": "Application",
+    "Application Type": [
+      "Pipeline Node"
+    ],
     "Node Type": "Image Utils",
     "Media Type": [
       "Image"
