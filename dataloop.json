@@ -8,6 +8,9 @@
     "Category": "Application",
     "Application Type": [
       "Pipeline Node"
+    ],
+    "Media Type": [
+      "Image"
     ]
   },
   "scope": "public",
