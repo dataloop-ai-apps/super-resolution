@@ -125,6 +125,7 @@
         "runtime": {
           "podType": "regular-xs",
           "concurrency": 10,
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/super-resolution:0.0.1",
           "autoscaler": {
             "minReplicas": 0,
             "maxReplicas": 2,
