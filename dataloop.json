@@ -123,8 +123,9 @@
         "name": "super-resolution-imaging",
         "moduleName": "super-resolution-imaging",
         "runtime": {
-          "podType": "regular-xs",
+          "podType": "regular-l",
           "concurrency": 10,
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/super-resolution:1.2.2",
           "autoscaler": {
             "minReplicas": 0,
             "maxReplicas": 2,
