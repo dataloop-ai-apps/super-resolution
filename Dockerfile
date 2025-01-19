@@ -1,45 +1,16 @@
 # Base image
-FROM dataloopai/dtlpy-agent:cpu.py3.10.opencv
-
-# Switch to non-root user
-USER 1000
-
-# Upgrade pip and setuptools to avoid dependency issues
-RUN pip install --user --upgrade pip setuptools
+FROM dataloopai/dtlpy-agent:gpu.cuda.11.5.py3.8.tf2.5
 
 # Install primary dependencies
-RUN pip install --user \
-    tensorflow \
-    ISR --no-deps \
+RUN pip install \
+    ISR --no-deps
+
+RUN pip install \
     pyyaml \
-    absl-py \
-    dtlpy
+    dtlpy \
+    numpy==1.23.4
 
-# Install TensorFlow-related auxiliary dependencies
-RUN pip install --user \
-    astunparse \
-    flatbuffers \
-    gast \
-    google-pasta \
-    grpcio \
-    h5py \
-    keras \
-    libclang \
-    opt-einsum \
-    tensorboard \
-    tensorflow-io-gcs-filesystem \
-    termcolor \
-    "ml-dtypes<0.5.0,>=0.4.0"
 
-# Reinstall TensorFlow to ensure compatibility
-RUN pip install --user --upgrade --force-reinstall tensorflow
 
-# Install specific NumPy version
-RUN pip install --user numpy==1.24.3
-
-# Install additional dependencies
-RUN pip install --user \
-    pyaml \
-    dataclasses \
-    dtlpymetrics \
-    inquirer
+# docker build -t gcr.io/viewo-g/piper/agent/runner/apps/super-resolution:1.2.2 -f Dockerfile .
+# docker run -it gcr.io/viewo-g/piper/agent/runner/apps/super-resolution:1.2.2 bash
